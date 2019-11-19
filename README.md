@@ -2,7 +2,7 @@
 
 a custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for interactive quizzes 
 
-[!](hugo-quiz-demo.png)
+![](hugo-quiz-demo.png)
 
 
 ## Installation
