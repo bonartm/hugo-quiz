@@ -1,0 +1,77 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+
+<style type="text/css" scoped>
+.quiz fieldset {
+    border-color: black;
+    border-width: 10px;
+    margin-bottom: 1em;
+}
+
+.quiz legend {
+    font-size: 105%;
+    font-weight: 600;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.quiz label {
+    display: block;
+    line-height: 1.75em;
+}
+
+.quiz input[type="radio"] {
+    margin-right: 10px;
+    page-break-after: avoid;
+    page-break-before: avoid;
+}
+
+.quiz input[type="submit"] {
+    background: black;
+    color: white;
+    display: block;
+    font-size: 120%;
+    font-weight: 600;
+    height: 2.5em;
+    margin-top: 2em;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.quiz table {
+    color: white;
+    font-weight: bold;
+    margin: 1em auto 2em auto;
+    width: 100%;
+}
+
+.quiz td {
+    padding: 5px 15px;
+    text-align: left;
+    width: 60px;
+}
+
+.quiz td.missing-label,
+.quiz td.missing-score {
+    background: #CECBC2;
+}
+
+.quiz td.right-label,
+.quiz td.right-score {
+    background: #74b559;
+}
+
+.quiz td.wrong-label,
+.quiz td.wrong-score {
+    background: #D01F3C;
+}
+</style>
+
+<script src="{{"js/quiz.js"| relURL}}"></script>
+
+<div class="quiz" id="{{ .Get 0}}">
+  {{.Inner}}
+  <script>
+    var quiz = new Quiz("{{ .Get 0}}", questions, {"shuffle": true});
+  </script>
+</div>

@@ -1,0 +1,23 @@
+baseurl                  = "https://bonartm.github.io/hugo-quiz/"           # Your domain name. Must end with "/"
+languageCode             = "en-us"
+defaultContentLanguage   = "en"
+isMultilingual           = false
+title                    = "hugo-quiz demo"
+
+description = "A Custom Hugo Shortcode for Interactive Quizzes"
+
+
+theme = "hugo-theme-learn"
+
+[params]
+  description = "A Custom Hugo Shortcode for Interactive Quizzes"
+  author = "Malte Bonart"
+  showVisitedLinks = false
+  disableBreadcrumb = true
+  disableNextPrev = true
+  disableSearch = true
+  disableHistory= true
+  themeVariant = "green"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

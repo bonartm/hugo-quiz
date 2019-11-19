@@ -1,0 +1,11 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<script>
+    var choices = {{ .Get "choices"}}.split(",");
+    var id = "{{with .Parent }}{{.Get 0}}{{ end }}";
+    var question = "{{ .Get "question"}}";
+    var answer = {{ .Get "answer"}};
+    if (! (id in questions)){
+      questions[id] = [];
+    }
+    questions[id].push(new Question(question, choices, answer-1));
+</script>
