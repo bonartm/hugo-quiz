@@ -34,4 +34,4 @@ Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-le
 
 ## Credits
 
-Quiz logic adopted from https://github.com/zimmicz/javascript-quiz-library
+Quiz logic and styling adopted from https://github.com/zimmicz/javascript-quiz-library
