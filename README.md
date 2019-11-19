@@ -1,17 +1,19 @@
 # hugo-quiz
 
-a custom hugo shortcode for interactive quizzes 
+a custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for interactive quizzes 
+
+[!](hugo-quiz-demo.png)
 
 
 ## Installation
 
-- copy `item.html` and `quiz.html` into `layouts/shortcodes` folder
-- copy `quiz.css` into `static/quiz.css` 
-- copy `quiz.js` into `static/quiz.js`
+Copy the content from `src` into your local hugo project folder. This project defines 2 shortcodes: `quiz.html` and `item.html`.
+
 
 ## Usage
 
 Create quizzes as hugo shortcodes in any of your markdown files in the `content` directory
+
 ```markdown
 
 Here is a simple example of a quiz, written in markdown using hugo shortcodes
@@ -29,7 +31,7 @@ Click on the `submit` button to see the result.
 
 ## Demo
 
-Visit https://bonartm.github.io/hugo-quiz/ for a live demo.
+Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-learn](https://themes.gohugo.io/theme/hugo-theme-learn/en) theme.
 
 ## Credits
 
