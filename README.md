@@ -1,6 +1,6 @@
 # hugo-quiz
 
-a custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for interactive quizzes 
+A custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for interactive quizzes. See the demo [here](https://bonartm.github.io/hugo-quiz/).
 
 ## Installation
 
