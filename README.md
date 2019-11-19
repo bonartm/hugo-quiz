@@ -2,9 +2,6 @@
 
 a custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for interactive quizzes 
 
-![](hugo-quiz-demo.png)
-
-
 ## Installation
 
 Copy the content from `src` into your local hugo project folder. This project defines 2 shortcodes: `quiz.html` and `item.html`.
@@ -28,6 +25,8 @@ Here is a simple example of a quiz, written in markdown using hugo shortcodes
 
 Click on the `submit` button to see the result.
 ```
+
+![](hugo-quiz-demo.png)
 
 ## Demo
 
