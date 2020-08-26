@@ -1,6 +1,7 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
+
 <style type="text/css" scoped>
-        .quiz fieldset {
+.quiz fieldset {
     border-color: black;
     border-width: 10px;
     margin-bottom: 1em;
@@ -66,11 +67,11 @@
 }
 </style>
 
-
 <script src="{{"js/quiz.js"| relURL}}"></script>
+
 <div class="quiz" id="{{ .Get 0}}">
   {{.Inner}}
   <script>
-    var quiz = new Quiz("{{ .Get 0}}", questions, {"shuffle": true});
+    var quiz = new Quiz("{{ .Get 0}}", questions);
   </script>
 </div>

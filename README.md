@@ -32,6 +32,13 @@ Click on the `submit` button to see the result.
 
 Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-learn](https://themes.gohugo.io/theme/hugo-theme-learn/en) theme.
 
+You can also build a local of version of the demo by typing:
+
+```shell
+cd demo
+hugo server -D
+```
+
 ## Credits
 
-Quiz logic and styling adopted from https://github.com/zimmicz/javascript-quiz-library
+Initial quiz logic and styling adopted from https://github.com/zimmicz/javascript-quiz-library

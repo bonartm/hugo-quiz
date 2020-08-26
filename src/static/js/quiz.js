@@ -8,15 +8,11 @@ var questions = {}
  * Quiz
  * @param {string} id
  * @param {array} questions
- * @param {object} options
- *
- * options object supports these keys:
- *     shuffle {boolean} should the questions be shuffled before rendered?
+ * 
  */
-function Quiz(id, options) {
+function Quiz(id) {
     this.id = id;
     this.questions = questions[id];
-    this.options = options || {};
     this.create();
 }
 
@@ -70,7 +66,7 @@ Quiz.prototype.create = function() {
   })
 
   for (var i in this.questions) {
-      form.appendChild(this.questions[i].render(this.options.shuffle || false));
+      form.appendChild(this.questions[i].render());
 
   }
 
@@ -85,30 +81,34 @@ Quiz.prototype.submit = function() {
         wrong = 0;
 
     for (var q of this.getQuestions()) {
-        var choice = null;
+        var choices = [];
 
         // validate
-        for (var o of q.getOptions()) {
-            if (o.isSelected()) {
-                choice = o;
-            }
-        }
+        choices = q.getSelected()   
+        
 
-        // evaluate
-        if (!choice) { // skip evaluation
+        if (choices.length == 0){
+            // skip evaluation
             q.renderMissing();
             missing += 1;
             continue;
-        }
-
-        if (!q.isRight(choice)) {
-            q.renderWrong();
-            wrong += 1;
+        } else if (choices.length < q.rightOptions.length){
+            // not enough selected
+            q.renderWrong()
         } else {
             q.renderRight();
-            right += 1;
+            for (var choice of choices){             
+
+                // evaluate    
+                if (!q.isRight(choice)) {
+                    q.renderWrong();
+                    wrong += 1;
+                    break;
+                }    
+            }
         }
-      }
+    }
+    right = this.getQuestions().length - wrong - missing  
 
     // show result
     var result = new Result(missing, right, wrong).render(this.id);
@@ -166,9 +166,9 @@ Result.prototype.render = function(id) {
  * @param {array} options to choose from
  * @param {integer} right option array index
  */
-function Question(question, options, rightOption) {
+function Question(question, options, rightOptions) {
     this.question = question;
-    this.rightOption = rightOption;
+    this.rightOptions = rightOptions;
     this.uid =  this._uid();
     this.options = this._createOptions(options);
 
@@ -201,6 +201,15 @@ Question.prototype._createOptions = function(_options) {
     return options;
 }
 
+Question.prototype.getSelected = function() {
+    var checkboxes = document.querySelectorAll("input[name='" + this.uid + "']:checked");
+    var choices = []
+    checkboxes.forEach((checkbox) => {
+        choices.push(checkbox.value);
+    });
+    return choices
+};
+
 
 /**
  * @return {array}
@@ -213,16 +222,12 @@ Question.prototype.getOptions = function() {
 /**
  * @return {DOM Element}
  */
-Question.prototype.render = function(shuffle) {
+Question.prototype.render = function() {
     var fieldset = document.createElement("fieldset"),
         legend = document.createElement("legend"),
         self = this;
 
     fieldset.id = this.uid;
-
-    if (shuffle) {
-        this._shuffleOptions();
-    }
 
     legend.innerHTML = this.question;
 
@@ -258,31 +263,15 @@ Question.prototype.renderWrong = function() {
  * @param  {Option}
  * @return {boolean}
  */
-Question.prototype.isRight = function(option) {
-    return option.getValue() == this.options[this.rightOption].value;
-};
+Question.prototype.isRight = function(choice) {
 
-
-/**
- * Shuffles the options.
- */
-Question.prototype._shuffleOptions = function() {
-    var result = [],
-        rightOption = this.options[this.rightOption].value; // obtain right option
-
-    while (this.options.length) {
-        var len = this.options.length,
-            idx = parseInt(Math.random() * len); // find an index
-
-        result.push(this.options.splice(idx, 1)[0]); // remove that item from array
-
-        if (result[result.length - 1].value == rightOption) {
-            this.rightOption = result.length - 1; //
+    for (const rightOption of this.rightOptions){
+        if (choice == this.options[rightOption-1].value){
+            return true;
         }
     }
-
-    this.options = result; // switch arrays
-}
+    return false;   
+};
 
 
 /**
@@ -305,8 +294,9 @@ Option.prototype.render = function() {
         option = document.createElement("input"),
         self = this;
 
+
     option.value = this.value;
-    option.type = "radio";
+    option.type = "checkbox";
     option.name = this.uid;
 
 
@@ -326,15 +316,4 @@ Option.prototype.render = function() {
  */
 Option.prototype.getValue = function() {
     return this.value;
-};
-
-
-/**
- * @return {boolean}
- * ugly
- */
-Option.prototype.isSelected = function() {
-    var choice = document.querySelector("input[name='" + this.uid + "']:checked");
-
-    return choice ? choice.value == this.value : false;
 };

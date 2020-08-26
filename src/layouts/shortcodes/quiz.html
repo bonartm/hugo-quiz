@@ -72,6 +72,6 @@
 <div class="quiz" id="{{ .Get 0}}">
   {{.Inner}}
   <script>
-    var quiz = new Quiz("{{ .Get 0}}", questions, {"shuffle": true});
+    var quiz = new Quiz("{{ .Get 0}}", questions);
   </script>
 </div>
