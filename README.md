@@ -4,8 +4,8 @@ A custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#reado
 
 ## Installation
 
-Copy the content from `src` into your local hugo project folder. This project defines 2 shortcodes: `quiz.html` and `item.html`.
-
+- Tested with version `0.57.2` of Hugo.
+- Copy the content from `demo/shortcodes` and `demo/static/js` into your local hugo project folder.
 
 ## Usage
 
@@ -19,8 +19,10 @@ Here is a simple example of a quiz, written in markdown using hugo shortcodes
 
 ## Quiz header
 
-{{< item question="What is Tom's name?" answer=2 choices="tim,tom,carl" >}}
-{{< item question="What is the capital of Germany?" answer=2 choices="Cologne,Berlin,Hamburg" >}}
+{{< item question="What is Tom's name?" answers="2" choices="tim,tom,carl" >}}
+{{< item question="What is the capital of Germany?" answers="2" choices="Cologne,Berlin,Hamburg" >}}
+{{< item question="Which number is larger 12?" answers="2,3" choices="5,13,183,1" >}}
+
 {{% /quiz %}}
 
 Click on the `submit` button to see the result.
@@ -32,6 +34,13 @@ Click on the `submit` button to see the result.
 
 Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-learn](https://themes.gohugo.io/theme/hugo-theme-learn/en) theme.
 
+You can also view a local of version of the demo by typing:
+
+```shell
+cd demo
+hugo server -D
+```
+
 ## Credits
 
-Quiz logic and styling adopted from https://github.com/zimmicz/javascript-quiz-library
+Initial quiz logic and styling adopted from https://github.com/zimmicz/javascript-quiz-library

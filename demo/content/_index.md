@@ -12,8 +12,9 @@ Here is a simple example of a quiz, written in markdown using hugo shortcodes
 
 ## Quiz header
 
-{{< item question="What is Tom's name?" answer=2 choices="tim,tom,carl" >}}
-{{< item question="What is the capital of Germany?" answer=2 choices="Cologne,Berlin,Hamburg" >}}
+{{< item question="What is Tom's name?" answers="2" choices="tim,tom,carl" >}}
+{{< item question="What is the capital of Germany?" answers="2" choices="Cologne,Berlin,Hamburg" >}}
+{{< item question="Which number is larger 12?" answers="2,3" choices="5,13,183,1" >}}
 
 {{% /quiz %}}
 
