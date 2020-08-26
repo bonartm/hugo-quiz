@@ -1,4 +1,4 @@
-name: hugo to github pages
+name: build and deploy
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
           hugo-version: '0.62.2'
 
       - name: Build
-        run: hugo --minify
+        run: cd demo && hugo --minify -d ../public
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
