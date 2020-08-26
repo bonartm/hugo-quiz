@@ -4,7 +4,8 @@ A custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#reado
 
 ## Installation
 
-Copy the content from `demo/shortcodes` and `demo/static/js` into your local hugo project folder.
+- Tested with version `0.57.2` of Hugo.
+- Copy the content from `demo/shortcodes` and `demo/static/js` into your local hugo project folder.
 
 ## Usage
 
