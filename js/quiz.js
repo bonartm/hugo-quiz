@@ -77,7 +77,7 @@ Quiz.prototype.create = function() {
 
 Quiz.prototype.submit = function() {
     var missing = 0,
-        right = 0,
+        right = this.getQuestions().length,
         wrong = 0;
 
     for (var q of this.getQuestions()) {
@@ -95,6 +95,7 @@ Quiz.prototype.submit = function() {
         } else if (choices.length < q.rightOptions.length){
             // not enough selected
             q.renderWrong()
+            wrong += 1;
         } else {
             q.renderRight();
             for (var choice of choices){             
@@ -108,7 +109,7 @@ Quiz.prototype.submit = function() {
             }
         }
     }
-    right = this.getQuestions().length - wrong - missing  
+    right = right - wrong - missing  
 
     // show result
     var result = new Result(missing, right, wrong).render(this.id);
