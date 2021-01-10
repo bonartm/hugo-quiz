@@ -8,14 +8,29 @@ page: true
 
 Here is a simple example of a quiz, written in markdown using hugo shortcodes
 
-{{% quiz test_quiz%}}
-
 ## Quiz header
 
-{{< item question="What is Tom's name?" answers="2" choices="tim,tom,carl" >}}
-{{< item question="What is the capital of Germany?" answers="2" choices="Cologne,Berlin,Hamburg" >}}
-{{< item question="Which number is larger 12?" answers="2,3" choices="5,13,183,1" >}}
+{{< quiz test_quiz >}}
 
-{{% /quiz %}}
+{{< item 
+    question="What is Tom's name?" 
+    answers="2" 
+    choices="tim,tom,carl"
+    hint="Tom's name is tom..."
+>}}
+{{< item 
+    question="What is the capital of Germany?" 
+    answers="2" 
+    choices="Cologne,Berlin,Hamburg"
+    hint="The capital is Berlin"
+>}}
+{{< item 
+    question="Which number is larger 12?"
+    answers="2,3" 
+    choices="5,13,183,1"
+    hint="Two numbers are larger!"
+>}}
+
+{{< /quiz >}}
 
 Click on the `submit` button to see the result.
