@@ -1,5 +1,7 @@
 # hugo-quiz
 
+![build and deploy](https://github.com/bonartm/hugo-quiz/workflows/build%20and%20deploy/badge.svg)
+
 A simple custom [hugo shortcode](https://gohugo.io/content-management/shortcodes/#readout) for basic interactive quizzes. See the demo [here](https://bonartm.github.io/hugo-quiz/).
 
 These quizzes are for fun and not for serious assessment. Since everything is rendered on the client side, the hints and solutions to the questions are visible in the source code. 
