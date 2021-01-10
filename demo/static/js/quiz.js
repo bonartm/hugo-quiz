@@ -95,7 +95,6 @@ Quiz.prototype.submit = function() {
         } else if (choices.length < q.rightOptions.length){
             // not enough selected
             q.renderWrong()
-            wrong += 1;
         } else {
             q.renderRight();
             for (var choice of choices){             
@@ -109,7 +108,7 @@ Quiz.prototype.submit = function() {
             }
         }
     }
-    right = right - wrong - missing  
+    right = this.getQuestions().length - wrong - missing  
 
     // show result
     var result = new Result(missing, right, wrong).render(this.id);
