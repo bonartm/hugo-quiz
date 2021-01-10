@@ -95,7 +95,6 @@ Quiz.prototype.submit = function() {
         } else if (choices.length < q.rightOptions.length){
             // not enough selected
             q.renderWrong()
-            wrong += 1;
         } else {
             q.renderRight();
             for (var choice of choices){             
@@ -109,7 +108,7 @@ Quiz.prototype.submit = function() {
             }
         }
     }
-    right = right - wrong - missing  
+    right = this.getQuestions().length - wrong - missing  
 
     // show result
     var result = new Result(missing, right, wrong).render(this.id);
@@ -165,13 +164,15 @@ Result.prototype.render = function(id) {
 /**
  * @param {string} question to ask
  * @param {array} options to choose from
- * @param {integer} right option array index
+ * @param {array} right option array index
+ * @param {string} hint text that shows after wrong answer
  */
-function Question(question, options, rightOptions) {
+function Question(question, options, rightOptions, hint) {
     this.question = question;
     this.rightOptions = rightOptions;
     this.uid =  this._uid();
     this.options = this._createOptions(options);
+    this.hint = this._createHint(hint);
 
     this.RNDR_RIGHT = "#74b559",
     this.RNDR_WRONG = "#D01F3C",
@@ -186,6 +187,14 @@ Question.prototype._uid = function() {
     // https://stackoverflow.com/questions/3242324/javascript-dateobj-gettime-for-a-uid-is-the-length-not-fixed
     return "q" + Math.random().toString(36).substr(2,9);
 };
+
+/**
+ * @param  {array} options
+ * @return {array} of Option objects
+ */
+Question.prototype._createHint = function(_hint) {
+    return new Hint(_hint, this.uid);
+}
 
 
 /**
@@ -240,24 +249,29 @@ Question.prototype.render = function() {
 
     fieldset.classList.add('animated', 'fadeIn')
 
-
-
+    fieldset.insertBefore(this.hint.render(), fieldset.firstChild);
     return fieldset;
 };
 
 
 Question.prototype.renderMissing = function() {
-    document.getElementById(this.uid).style.borderColor = this.RNDR_MISSING;
+    var fieldset = document.getElementById(this.uid)
+    fieldset.style.borderColor = this.RNDR_MISSING;
 };
 
 
 Question.prototype.renderRight = function(first_argument) {
-    document.getElementById(this.uid).style.borderColor = this.RNDR_RIGHT;
+    var fieldset = document.getElementById(this.uid)
+    fieldset.style.borderColor = this.RNDR_RIGHT;
+    fieldset.getElementsByClassName('hint')[0].style = "display: none;";   
 };
 
 
 Question.prototype.renderWrong = function() {
-    document.getElementById(this.uid).style.borderColor = this.RNDR_WRONG;
+    var fieldset = document.getElementById(this.uid)
+    fieldset.style.borderColor = this.RNDR_WRONG;
+    fieldset.getElementsByClassName('hint')[0].style = "display: block;";   
+    
 };
 
 /**
@@ -274,6 +288,30 @@ Question.prototype.isRight = function(choice) {
     return false;   
 };
 
+/**
+ * @param {string} option value
+ * @param {string} Question uid
+ */
+function Hint(value, uid) {
+    this.value = value;
+    this.uid = uid;
+}
+
+
+/**
+ * Renders HTML.
+ * @return {DOM Element}
+ */
+Hint.prototype.render = function() {
+    var para = document.createElement("p");
+    para.innerHTML = '<i class="fas fa-info-circle"></i> ' + this.value;
+    para.style="display: none;";
+    para.classList.add('hint');
+    return para;
+};
+
+
+
 
 /**
  * @param {string} option value
@@ -284,6 +322,7 @@ function Option(value, uid) {
     this.uid = uid;
     this.checked = false;
 }
+
 
 
 /**
