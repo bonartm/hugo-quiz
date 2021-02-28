@@ -1,19 +1,199 @@
-<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.80.0"><meta name=description content="A Custom Hugo Shortcode for Interactive Quizzes"><meta name=author content="Malte Bonart"><link rel=icon href=/hugo-quiz/images/favicon.png type=image/png><title>Demo :: hugo-quiz demo</title><link href=/hugo-quiz/css/nucleus.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/fontawesome-all.min.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/hybrid.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/featherlight.min.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/perfect-scrollbar.min.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/auto-complete.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/atom-one-dark-reasonable.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/theme.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/hugo-theme.css?1614533627 rel=stylesheet><link href=/hugo-quiz/css/theme-quizdown.css?1614533627 rel=stylesheet><script src=/hugo-quiz/js/jquery-3.3.1.min.js?1614533627></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.css><script defer src=https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.js></script></head><body data-url=/hugo-quiz/><nav id=sidebar><div id=header-wrapper><div id=header><a id=logo href=https://bonartm.github.io/hugo-quiz/><h3 style=font-size:1.8vw;overflow-wrap:anywhere;font-color:#000>Hugo Quiz Demo</h3></a></div></div><div class=highlightable><ul class=topics></ul><section id=footer><p><a rel=bonartm/hugo-quiz href=https://github.com/bonartm/hugo-quiz><i class="fab fa-github"></i>bonartm/hugo-quiz</a></p></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div id=head-tags></div><div id=body-inner><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>navigation</a></span><h1 id=hugo-quiz>Hugo Quiz</h1><script>console.log("\n# The sound of dog\n\nWhat do dogs sound like?\n\n\u003e Some hint\n\n```python\nclass Dog(Animal):\n    def __init__(self, name):\n        self.name = name\n```\n\n- [ ] yes\n- [ ] no\n- [ ] `self.sound = \"meow\"`\n- [x] wuff\n\n# Put the [days](https://en.wikipedia.org/wiki/Day) in order!\n\n\u003e Monday is the *first* day of the week.\n\n1. Monday\n2. Tuesday\n3. Wednesday\n4. Friday\n5. Saturday  \n")</script><div class=quizdown># The sound of dog
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="A Custom Hugo Shortcode for Interactive Quizzes">
+<meta name="author" content="Malte Bonart">
+
+    <link rel="icon" href="/hugo-quiz/images/favicon.png" type="image/png">
+
+    <title>Demo :: hugo-quiz demo</title>
+
+    
+    <link href="/hugo-quiz/css/nucleus.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/fontawesome-all.min.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/hybrid.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/featherlight.min.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/perfect-scrollbar.min.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/auto-complete.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/atom-one-dark-reasonable.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/theme.css?1614535678" rel="stylesheet">
+    <link href="/hugo-quiz/css/hugo-theme.css?1614535678" rel="stylesheet">
+    
+    <link href="/hugo-quiz/css/theme-quizdown.css?1614535678" rel="stylesheet">
+    
+    
+
+    <script src="/hugo-quiz/js/jquery-3.3.1.min.js?1614535678"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link 
+rel="stylesheet" 
+href="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.css"
+/>
+<script 
+defer 
+src="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.js">
+</script>
+  </head>
+  <body class="" data-url="/hugo-quiz/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://bonartm.github.io/hugo-quiz/">
+  <h3 style="font-size:1.8vw;overflow-wrap:anywhere;font-color:black;">Hugo Quiz Demo</h3>
+</a>
+
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><a rel="bonartm/hugo-quiz" href="https://github.com/bonartm/hugo-quiz"><i class="fab fa-github"></i>  bonartm/hugo-quiz</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<h1 id="hugo-quiz">Hugo Quiz</h1>
+<script>
+  console.log("\n# The sound of dog\n\nWhat do dogs sound like?\n\n\u003e Some hint\n\n```python\nclass Dog(Animal):\n    def __init__(self, name):\n        self.name = name\n```\n\n- [ ] yes\n- [ ] no\n- [ ] `self.sound = \"meow\"`\n- [x] wuff\n\n# Put the [days](https://en.wikipedia.org/wiki/Day) in order!\n\n\u003e Monday is the *first* day of the week.\n\n1. Monday\n2. Tuesday\n3. Wednesday\n4. Friday\n5. Saturday  \n")
+</script>
+<div class='quizdown'>
+  
+# The sound of dog
+
 What do dogs sound like?
+
 > Some hint
+
 ```python
 class Dog(Animal):
-def __init__(self, name):
-self.name = name
+    def __init__(self, name):
+        self.name = name
 ```
+
 - [ ] yes
 - [ ] no
 - [ ] `self.sound = "meow"`
 - [x] wuff
+
 # Put the [days](https://en.wikipedia.org/wiki/Day) in order!
+
 > Monday is the *first* day of the week.
+
 1. Monday
 2. Tuesday
 3. Wednesday
 4. Friday
-5. Saturday</div></div></div><div id=navigation></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/hugo-quiz/js/clipboard.min.js?1614533627></script><script src=/hugo-quiz/js/perfect-scrollbar.min.js?1614533627></script><script src=/hugo-quiz/js/perfect-scrollbar.jquery.min.js?1614533627></script><script src=/hugo-quiz/js/jquery.sticky.js?1614533627></script><script src=/hugo-quiz/js/featherlight.min.js?1614533627></script><script src=/hugo-quiz/js/highlight.pack.js?1614533627></script><script>hljs.initHighlightingOnLoad();</script><script src=/hugo-quiz/js/modernizr.custom-3.6.0.js?1614533627></script><script src=/hugo-quiz/js/learn.js?1614533627></script><script src=/hugo-quiz/js/hugo-learn.js?1614533627></script><link href=/hugo-quiz/mermaid/mermaid.css?1614533627 rel=stylesheet><script src=/hugo-quiz/mermaid/mermaid.js?1614533627></script><script>mermaid.initialize({startOnLoad:true});</script></body></html>
+5. Saturday  
+
+</div>
+
+	
+  
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/hugo-quiz/js/clipboard.min.js?1614535678"></script>
+    <script src="/hugo-quiz/js/perfect-scrollbar.min.js?1614535678"></script>
+    <script src="/hugo-quiz/js/perfect-scrollbar.jquery.min.js?1614535678"></script>
+    <script src="/hugo-quiz/js/jquery.sticky.js?1614535678"></script>
+    <script src="/hugo-quiz/js/featherlight.min.js?1614535678"></script>
+    <script src="/hugo-quiz/js/highlight.pack.js?1614535678"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/hugo-quiz/js/modernizr.custom-3.6.0.js?1614535678"></script>
+    <script src="/hugo-quiz/js/learn.js?1614535678"></script>
+    <script src="/hugo-quiz/js/hugo-learn.js?1614535678"></script>
+
+    <link href="/hugo-quiz/mermaid/mermaid.css?1614535678" rel="stylesheet" />
+    <script src="/hugo-quiz/mermaid/mermaid.js?1614535678"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
