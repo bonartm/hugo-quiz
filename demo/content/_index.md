@@ -6,31 +6,31 @@ page: true
 
 # Hugo Quiz
 
-Here is a simple example of a quiz, written in markdown using hugo shortcodes
+{{< quizdown >}}
+# The sound of dog
 
-## Quiz header
+What do dogs sound like?
 
-{{< quiz test_quiz >}}
+> Some hint
 
-{{< item 
-    question="What is Tom's name?" 
-    answers="2" 
-    choices="tim,tom,carl"
-    hint="Tom's name is tom..."
->}}
-{{< item 
-    question="What is the capital of Germany?" 
-    answers="2" 
-    choices="Cologne,Berlin,Hamburg"
-    hint="The capital is Berlin"
->}}
-{{< item 
-    question="Which number is larger 12?"
-    answers="2,3" 
-    choices="5,13,183,1"
-    hint="Two numbers are larger!"
->}}
+```python
+class Dog(Animal):
+    def __init__(self, name):
+        self.name = name
+```
 
-{{< /quiz >}}
+- [ ] yes
+- [ ] no
+- [ ] `self.sound = "meow"`
+- [x] wuff
 
-Click on the `submit` button to see the result.
+# Put the [days](https://en.wikipedia.org/wiki/Day) in order!
+
+> Monday is the *first* day of the week.
+
+1. Monday
+2. Tuesday
+3. Wednesday
+4. Friday
+5. Saturday  
+{{< /quizdown >}}
