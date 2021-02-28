@@ -17,7 +17,7 @@ theme = "hugo-theme-learn"
   disableNextPrev = true
   disableSearch = true
   disableHistory= true
-  themeVariant = "green"
+  themeVariant = "quizdown"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
