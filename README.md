@@ -16,6 +16,14 @@ A hugo shortcode for writing quizzes with a markdown-like syntax: [quizdown-js](
 ```
 3. Optional: Apply some custom styling. For the hugo-learn theme you can create a file `static/css/custom-theme.css` and change the `themeVariant` to `custom-theme` in the `config.toml`. Check out the demo for an example.
 
+**Currently, the `--minify` flag of the hugo command causes issues with the raw quizdown-markdown code. Please remove the flag when building your website or use the following option in your `config.toml`**:
+
+```toml
+[minify]
+  disableHTML = true
+```
+
+
 ## Usage
 
 Write quizzes in plain markdown in any of your files in the `content` directory:
