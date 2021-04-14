@@ -33,7 +33,17 @@ Write quizzes in plain markdown in any of your files in the `content` directory:
 # Hugo Quiz
 
 {{< quizdown >}}
+
+---
+primary_color: lightgray
+shuffle_questions: true
+---
+
 ## The sound of dog
+
+---
+shuffle_answers: false
+---
 
 What do dogs sound like?
 

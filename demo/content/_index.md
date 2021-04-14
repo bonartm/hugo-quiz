@@ -9,6 +9,10 @@ page: true
 {{< quizdown >}}
 # The sound of dog
 
+---
+shuffle_answers: false
+---
+
 What do dogs sound like?
 
 > Some hint
