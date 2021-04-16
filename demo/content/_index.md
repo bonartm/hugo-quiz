@@ -7,6 +7,11 @@ page: true
 # Hugo Quiz
 
 {{< quizdown >}}
+
+---
+primary_color: orange
+---
+
 # The sound of dog
 
 ---
@@ -37,4 +42,11 @@ class Dog(Animal):
 3. Wednesday
 4. Friday
 5. Saturday  
+
+
+# This question has no answer! The title is very long so it get's resized until if fits into the container.
+
+- [ ] yes
+- [ ] no
+
 {{< /quizdown >}}
