@@ -68,7 +68,7 @@ What do dogs sound like?
 {{< /quizdown >}}
 ```
 
-![](hugo-quiz-demo.png)
+![](hugo-quiz-demo_v0.2.2.png)
 
 ## Demo
 
