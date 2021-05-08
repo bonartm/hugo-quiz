@@ -6,10 +6,14 @@ page: true
 
 # Hugo Quiz
 
+A hugo shortcode for writing quizzes with a markdown-like syntax: https://github.com/bonartm/hugo-quiz.
+
+**Try out the live code editor: https://bonartm.github.io/quizdown-live-editor/**
+
 {{< quizdown >}}
 
 ---
-primary_color: orange
+primary_color: steelblue
 ---
 
 # The sound of dog
@@ -44,7 +48,7 @@ class Dog(Animal):
 5. Saturday  
 
 
-# This question has no answer! The title is very long so it get's resized until if fits into the container.
+# This question has no answer!
 
 - [ ] yes
 - [ ] no

@@ -8,14 +8,14 @@ A hugo shortcode for writing quizzes with a markdown-like syntax: [quizdown-js](
 
 ## Installation
 
-1. Copy the content from `demo/shortcodes/quizdown.html`  into your local hugo project folder.
-2. Add the `quizdown.js` and `quizdown.css` to your project. For the hugo-learn theme you can create a file `partials/custom-header.html` with the following content:
+1. Copy the content from `demo/layouts/shortcodes/quizdown.html`  into your local hugo project `layouts/shortcodes/` folder.
+2. Add the `quizdown.js` to your project. For the hugo-learn theme you can create a file `layouts/partials/custom-header.html` with the following content:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.css" />
-<script defer src="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@v0.0.2/public/build/quizdown.js"></script>
+<script 
+src="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@0.2.2/public/build/quizdown.js">
+</script>
+<script>quizdown.init()</script> 
 ```
-3. Optional: Apply some custom styling. For the hugo-learn theme you can create a file `static/css/custom-theme.css` and change the `themeVariant` to `custom-theme` in the `config.toml`. Check out the demo for an example.
-
 **Currently, the `--minify` flag of the hugo command causes issues with the raw quizdown-markdown code. Please remove the flag when building your website or use the following option in your `config.toml`**:
 
 ```toml
@@ -35,8 +35,10 @@ Write quizzes in plain markdown in any of your files in the `content` directory:
 {{< quizdown >}}
 
 ---
-primary_color: lightgray
-shuffle_questions: true
+primary_color: orange
+secondary_color: lightgray
+text_color: black
+shuffle_questions: false
 ---
 
 ## The sound of dog
@@ -48,12 +50,6 @@ shuffle_answers: false
 What do dogs sound like?
 
 > Some hint
-
-\`\`\`python
-class Dog(Animal):
-    def __init__(self, name):
-        self.name = name
-\`\`\`
 
 - [ ] yes
 - [ ] no
@@ -78,7 +74,7 @@ class Dog(Animal):
 
 Tested with version `0.80.0` of Hugo and the Hugo Learn theme.
 
-Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-learn](https://themes.gohugo.io/theme/hugo-theme-learn/en) theme. You can also view a local of version of the demo. 
+Visit https://bonartm.github.io/hugo-quiz/ for a live demo based on the [hugo-learn](https://themes.gohugo.io/theme/hugo-theme-learn/en) theme. You can also view a local version of the demo. 
 
 First download the theme:
 
