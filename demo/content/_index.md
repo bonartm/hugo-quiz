@@ -22,9 +22,9 @@ primary_color: steelblue
 shuffle_answers: false
 ---
 
-What do dogs sound like?
+# What do dogs sound like?
 
-> Some hint
+> ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Dog_-_%E0%B4%A8%E0%B4%BE%E0%B4%AF-6.JPG/150px-Dog_-_%E0%B4%A8%E0%B4%BE%E0%B4%AF-6.JPG)
 
 ```python
 class Dog(Animal):
@@ -48,7 +48,12 @@ class Dog(Animal):
 5. Saturday  
 
 
-# This question has no answer!
+# Optional Math formula rendering
+
+$$
+x = \frac{2+2}{\sqrt{a^2+b^2}}
+$$
+
 
 - [ ] yes
 - [ ] no
