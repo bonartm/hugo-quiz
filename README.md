@@ -80,7 +80,7 @@ Check out the [documentation](https://github.com/bonartm/quizdown-js/blob/main/d
 - support for [hints and explanations](https://github.com/bonartm/quizdown-js/blob/main/docs/syntax.md#hints-and-comments).
 - [options](https://github.com/bonartm/quizdown-js/blob/main/docs/options.md) for color theme, question shuffling, localization.
 
-![](hugo-quiz-demo_v0.2.2.png)
+![](hugo-quiz-demo-v0.4.0.png)
 
 
 ## Demo
