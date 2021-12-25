@@ -22,7 +22,7 @@ primary_color: steelblue
 shuffle_answers: false
 ---
 
-# What do dogs sound like?
+What do dogs sound like?
 
 > ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Dog_-_%E0%B4%A8%E0%B4%BE%E0%B4%AF-6.JPG/150px-Dog_-_%E0%B4%A8%E0%B4%BE%E0%B4%AF-6.JPG)
 
