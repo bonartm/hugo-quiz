@@ -15,15 +15,42 @@
 
 ## Installation
 
-1. Copy the content from `demo/layouts/shortcodes/quizdown.html`  into your local `layouts/shortcodes/` folder.
-2. Add the `quizdown.js` to your project. For the hugo-learn theme you can copy the content of `demo/layouts/partials/custom-header.html` into your local `layouts/partials/` folder.
+Quizdown is a javascript library which is developed in [a separated project](https://github.com/bonartm/quizdown-js/). hugo-quiz uses a simple shortcode to use quizdown with Hugo. For the library, you can either use a link to a CDN or download and link to the local `quizdown.js` file.
 
-**Currently, the `--minify` flag of the hugo command causes issues with the raw quizdown-markdown code. Please remove the flag when building your website or use the following option in your `config.toml`**:
 
-```toml
-[minify]
-  disableHTML = true
+### Hugo-learn theme
+
+1. To install and setup the **library**, copy the file `demo/layouts/partials/custom-header.html` into your local `layouts/partials/` folder. This inserts the nescessary javascript code inside the `head` section of the hugo website.
+2. To install the **shortcode**, copy the content from `demo/layouts/shortcodes/quizdown.html`  into your local `layouts/shortcodes/` folder.
+3. **Currently, the `--minify` flag of the hugo command causes issues with the raw quizdown-markdown code. Please remove the flag when building your website or use the following option in your `config.toml`**:
+
+  ```toml
+  [minify]
+    disableHTML = true
+  ```
+
+### Other themes (without a `custom-header.html`)
+
+If your theme does not offer a `custom-header.html` you need to add the library (and the extensions you want to use) to the `head` section of your website:
+
+```html
+<head>
+    ...
+  <script 
+     src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+  </script>
+  <script 
+      src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+  </script>
+  <script 
+      src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+  </script>
+  <script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  ...
+
+</head>
 ```
+
 
 
 ## Usage  (edit example in [🚀 quizdown editor](https://bonartm.github.io/quizdown-live-editor/?code=---%0Aprimary_color%3A%20orange%0Asecondary_color%3A%20lightgray%0Atext_color%3A%20black%0Ashuffle_questions%3A%20false%0A---%0A%0A%23%23%20The%20sound%20of%20dog%0A%0A---%0Ashuffle_answers%3A%20false%0A---%0A%0AWhat%20do%20dogs%20sound%20like%3F%0A%0A%3E%20Some%20hint%0A%0A-%20%5B%20%5D%20yes%0A-%20%5B%20%5D%20no%0A-%20%5B%20%5D%20%60self.sound%20%3D%20%22meow%22%60%0A-%20%5Bx%5D%20wuff%0A%0A%23%23%20Put%20the%20%5Bdays%5D(https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDay)%20in%20order!%0A%0A%3E%20Monday%20is%20the%20*first*%20day%20of%20the%20week.%0A%0A1.%20Monday%0A2.%20Tuesday%0A3.%20Wednesday%0A4.%20Friday%0A5.%20Saturday%20))
